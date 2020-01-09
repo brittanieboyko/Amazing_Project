@@ -24,6 +24,4 @@ var queryURL = "http://api.open-notify.org/astros.json";
     .then(function (data){
 
 console.log(data.number)
-
-$("#header1").text(data.people[0].name)
     })
