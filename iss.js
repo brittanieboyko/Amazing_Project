@@ -3,6 +3,7 @@
     
     var queryURL = "http://api.open-notify.org/iss-now.json";
     var map;
+    var shuttleIcon = "assets/images/shuttle.png"
 
     $.ajax({
         url: queryURL,
@@ -18,15 +19,18 @@
     
         map = new google.maps.Map(document.getElementById("map"), {
             center: iss,
+            gestureHandling: 'none',
+            zoomControl: false,
             zoom: 2
         });
     
         var marker = new google.maps.Marker({
             position: iss,
+            icon: shuttleIcon,
             map: map
         });
+        
         setTimeout(initMap, 5000);
     });
-
   
     }
