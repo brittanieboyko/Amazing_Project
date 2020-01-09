@@ -25,6 +25,7 @@
             position: iss,
             map: map
         });
+        setTimeout(initMap, 5000);
     });
 
   
