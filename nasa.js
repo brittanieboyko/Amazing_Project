@@ -11,6 +11,11 @@ $(document).ready(function(){
 
     .then(function(data) {
         console.log(data);
+        
+        $("#apod-image").attr({
+            src: data.url,
+            alt: ""
+          });
     })
 
 
