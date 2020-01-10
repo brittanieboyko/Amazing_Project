@@ -14,8 +14,10 @@ $(document).ready(function(){
         
         $("#apod-image").attr({
             src: data.url,
-            alt: ""
+            alt: data.title
           });
+        $("#apod-title").text(data.title);
+        $("#apod-date").text(data.date);
     })
 
 
