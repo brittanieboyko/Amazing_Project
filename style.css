@@ -2,3 +2,10 @@
     margin-top: 2rem;
     
 }
+
+#map {
+    margin: 0 auto;
+    width: 60%;
+    height: 400px;
+    margin-top: 5%;
+}
