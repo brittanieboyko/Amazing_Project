@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
     function positionMarker(location, map) {
-        var shuttleIcon = "assets/images/shuttle.png"
+        var shuttleIcon = "assets/images/icon-space-shuttle.png"
 
         var marker = new google.maps.Marker({
             position: location,
@@ -22,8 +22,8 @@ $(document).ready(function(){
         
         .then (function (data) {
             var lat = parseInt(data.iss_position.latitude);
-            var lon = parseInt(data.iss_position.longitude);
-            var iss = {lat: lat, lng: lon};
+            var lng = parseInt(data.iss_position.longitude);
+            var iss = {lat: lat, lng: lng};
         
             map = new google.maps.Map(document.getElementById("map"), {
                 center: iss,
