@@ -1,11 +1,13 @@
-.rover {
-    margin-top: 2rem;
-    
+.apod-container {
+    margin: 0 auto;
+    margin-top: 3%;
+    height: 50%;
+    width: 50%;
 }
 
 #map {
     margin: 0 auto;
+    margin-top: 5%;
     width: 60%;
     height: 400px;
-    margin-top: 5%;
 }
