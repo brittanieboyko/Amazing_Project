@@ -29,7 +29,7 @@ $(document).ready(function(){
                 center: iss,
                 gestureHandling: 'none',
                 zoomControl: false,
-                zoom: 2
+                zoom: 3
             });
 
             positionMarker(iss, map)
