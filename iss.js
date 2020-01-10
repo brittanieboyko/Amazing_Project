@@ -32,7 +32,7 @@ $(document).ready(function(){
                 zoom: 3
             });
 
-            positionMarker(iss, map)
+            positionMarker(iss, map);
         });
 
         setTimeout(initMap, 5000);
