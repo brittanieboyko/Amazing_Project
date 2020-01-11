@@ -5,23 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ISS</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="top-bar">
         <div class="align-center dropdown menu" data-dropdown-menu>   
-            <a >Amazing Space Project</a>
+            <a>Amazing Space Project</a>
             
             <a href="index.html">NASA</a>
             
-            <a href="#">SpaceX</a>
+            <a href="spacex.html">SpaceX</a>
             
             <a href="iss.html">International Space Station</a>
         </div>
     </div>
     <h3> ISS Tracker</h3>
     <div id="map"></div>
+    <br></br>
+    <h4> How many people are in space?</h4>
+    <div id="numAnswer"></div>
+    <br></br>
+    <h4>Who is in space?</h4>
+    <div id="pplInSpace"></div>
+    <div class="orbit" role="region" aria-label="Astronauts Aboard the ISS" data-orbit  data-options="animInFromLeft:fade-in">
+        <div class="orbit-wrapper">
+          <div class="orbit-controls">
+            <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+            <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+          </div>
+          <ul class="orbit-container">
+            <li class="is-active orbit-slide">
+              <figure class="orbit-figure">
+                <img class="orbit-image" src="/assets/images/CK.png" alt="Space">
+                <figcaption class="orbit-caption">Christina Koch</figcaption>
+              </figure>
+            </li>
+            <li class="orbit-slide">
+              <figure class="orbit-figure">
+                <img class="orbit-image" src="assets/images/AS.png" alt="Space">
+                <figcaption class="orbit-caption">Alexander Skvortsov</figcaption>
+              </figure>
+            </li>
+            <li class="orbit-slide">
+              <figure class="orbit-figure">
+                <img class="orbit-image" src="assets/images/LP.png" alt="Space">
+                <figcaption class="orbit-caption">Luca Parmitano</figcaption>
+              </figure>
+            </li>
+            <li class="orbit-slide">
+              <figure class="orbit-figure">
+                <img class="orbit-image" src="assets/images/AM.png" alt="Space">
+                <figcaption class="orbit-caption">Andrew Morgan</figcaption>
+              </figure>
+            </li>
+            <li class="orbit-slide">
+                <figure class="orbit-figure">
+                  <img class="orbit-image" src="assets/images/OS.png" alt="Space">
+                  <figcaption class="orbit-caption">Oleg Skripochka</figcaption>
+                </figure>
+              </li>
+              <li class="orbit-slide">
+                <figure class="orbit-figure">
+                  <img class="orbit-image" src="assets/images/JM.png" alt="Space">
+                  <figcaption class="orbit-caption">Jessica Meir</figcaption>
+                </figure>
+              </li>
+          </ul>
+        </div>
+      </div>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

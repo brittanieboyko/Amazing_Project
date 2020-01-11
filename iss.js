@@ -38,5 +38,35 @@ $(document).ready(function(){
         setTimeout(initMap, 5000);
     }
 
+    function peopleInSpace(){
+
+        var queryURL = "http://api.open-notify.org/astros.json";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+
+        .then (function (data){
+            
+            var numInSpace = data.number
+
+            var answerText = $("#numAnswer")
+
+            answerText.text("At this moment there are " + numInSpace + " people in space!")
+
+            var whoInSpace = $("#pplInSpace")
+
+            data['people'].forEach(function (d) {
+               whoInSpace.append('<li>' + d['name'] + '</li>')
+            
+            })
+
+        });
+    }
+    
+
     initMap();
-});
+    peopleInSpace();
+
+})
