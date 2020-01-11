@@ -17,3 +17,8 @@
     width: 60%;
     height: 400px;
 }
+.gallery-img {
+    height: 300px;
+    width: 300px;
+    margin: 5px;
+}
