@@ -33,12 +33,16 @@ $(document).ready(function(){
                 url: nasaURL + searchTerm,
                 method: "GET"
             })
-
             .then(function(data) {
-                console.log(data);
-            });
+                let results = data.collection.items
+                results.forEach(function(result) {
+                    console.log(result.links[0].href);
+                })
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
         }
-
     }
 
     $("#image-search-button").click(getNasaImageLibrary);
