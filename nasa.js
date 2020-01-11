@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    var galleryImageContainer = $("#image-container");
+
     function getAPOD() {
         var nasaURL = "https://api.nasa.gov/planetary/apod?api_key=";
         
@@ -25,6 +27,8 @@ $(document).ready(function(){
 
     function getNasaImageLibrary() {
         event.preventDefault();
+        galleryImageContainer.empty();
+
         var nasaURL = "https://images-api.nasa.gov/search?q=";
         var searchTerm = $("#image-search-term").val().trim();
 
@@ -36,7 +40,12 @@ $(document).ready(function(){
             .then(function(data) {
                 let results = data.collection.items
                 results.forEach(function(result) {
-                    console.log(result.links[0].href);
+                    var galleryImage = $("<img>");
+                    galleryImage.attr({
+                        src: result.links[0].href,
+                        alt: result.data.title
+                        });
+                    galleryImageContainer.append(galleryImage);
                 })
             })
             .catch(function(error) {
@@ -46,6 +55,4 @@ $(document).ready(function(){
     }
 
     $("#image-search-button").click(getNasaImageLibrary);
-
-
 })
