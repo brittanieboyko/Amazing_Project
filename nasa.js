@@ -39,14 +39,19 @@ $(document).ready(function(){
             })
             .then(function(data) {
                 let results = data.collection.items
-                results.forEach(function(result) {
-                    var galleryImage = $("<img>");
-                    galleryImage.attr({
-                        src: result.links[0].href,
-                        alt: result.data.title
-                        });
-                    galleryImageContainer.append(galleryImage);
-                })
+                if (Array.isArray(results) && results.length) {
+                    results.forEach(function(result) {
+                        var galleryImage = $("<img>");
+                        galleryImage.attr({
+                            src: result.links[0].href,
+                            alt: result.data.title,
+                            class: "gallery-img"
+                            });
+                        galleryImageContainer.append(galleryImage);
+                    })
+                } else {
+                    galleryImageContainer.text("No Results Found for " + searchTerm);
+                }
             })
             .catch(function(error) {
                 console.log(error);
