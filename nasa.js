@@ -24,17 +24,24 @@ $(document).ready(function(){
     getAPOD();
 
     function getNasaImageLibrary() {
-        var nasaURL = "https://images-api.nasa.gov/search?q=orion";
+        event.preventDefault();
+        var nasaURL = "https://images-api.nasa.gov/search?q=";
+        var searchTerm = $("#image-search-term").val().trim();
 
-        $.ajax({
-            url: nasaURL,
-            method: "GET"
-        })
+        if (searchTerm) {
+            $.ajax({
+                url: nasaURL + searchTerm,
+                method: "GET"
+            })
 
-        .then(function(data) {
-            console.log(data);
-        });
+            .then(function(data) {
+                console.log(data);
+            });
+        }
+
     }
-    getNasaImageLibrary();
+
+    $("#image-search-button").click(getNasaImageLibrary);
+
 
 })
