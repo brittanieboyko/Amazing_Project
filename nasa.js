@@ -4,7 +4,6 @@ $(document).ready(function(){
 
     function getAPOD() {
         var nasaURL = "https://api.nasa.gov/planetary/apod?api_key=";
-        
         var nasaKey = "wX95wmF1OaylDvqokfgXj5v4WftUvcM915KPIUv1";
 
         $.ajax({
