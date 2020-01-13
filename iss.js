@@ -41,7 +41,6 @@ $(document).ready(function(){
             if (!isMap){
                 map = new google.maps.Map(document.getElementById("map"), {
                     center: iss,
-                    gestureHandling: 'none',
                     zoomControl: false,
                     zoom: 3
                 });
