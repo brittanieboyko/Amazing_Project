@@ -83,8 +83,12 @@ $(document).ready(function(){
             var nameDiv = $("<div>");
             nameDiv.append(nameGet);
 
-            var infoDiv = $("<p>");
-            infoDiv.append(costGet, massGet, heightGet, descGet);
+            var costLI = $("<li>").text(costGet);
+            var massLI = $("<li>").text(massGet);
+            var heightLI = $("<li>").text(heightGet);
+            var descLI = $("<li>").text(descGet)
+            var infoDiv = $("<ul>");
+            infoDiv.append(costLI).append(massLI).append(heightLI).append(descLI);
             
             captionText.append(nameDiv);
 
