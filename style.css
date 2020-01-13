@@ -1,4 +1,9 @@
-
+body, h3, h4, button {
+  font-family: 'Roboto Mono', monospace;
+}
+.button {
+  background-color: #063852;
+}
 .rocket-images{
     width: 900px;
     height: 600px;
@@ -13,14 +18,12 @@
 
 #map {
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 3%;
     width: 60%;
     height: 400px;
 }
 
 /* w3schools carousel */
-
-body {font-family: Verdana, sans-serif; margin:0}
 
 img {vertical-align: middle;}
 
@@ -151,114 +154,6 @@ img {vertical-align: middle;}
     width: 30%;
 }
 
-/* w3schools carousel */
-
-body {font-family: Verdana, sans-serif; margin:0}
-
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.captionText {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-
-.nasa-gallery-img {
-  height: 300px;
-  width: 300px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -308,4 +203,58 @@ img {vertical-align: middle;}
   .modal-content {
     width: 100%;
   }
+}
+
+.nasa-image-search {
+  margin: 0 auto;
+  width: 75%;
+  margin-top: 3%;
+}
+
+#image-container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3%;
+}
+
+.nasa-gallery-img {
+  height: 315px;
+  width: 315px;
+  margin: 1%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hover-underline-menu {
+  width: 100%;
+  height: 60px;
+  padding: 1%;
+  background-color: #063852;
+  margin-bottom: 3%;
+}
+
+.hover-underline-menu a {
+  color: #ffffff;
+  padding: 1.2% 1.5%;
+}
+
+.hover-underline-menu .underline-from-center {
+  position: relative;
+}
+
+.hover-underline-menu .underline-from-center::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 0.125rem);
+  border-bottom: 0.125rem solid #763626;
+  left: 50%;
+  right: 50%;
+  transition: all 0.5s ease;
+}
+
+.hover-underline-menu .underline-from-center:hover::after {
+  left: 0;
+  right: 0;
+  transition: all 0.5s ease;
 }
