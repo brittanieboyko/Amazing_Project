@@ -17,6 +17,10 @@ li {
   padding: 1rem 15rem 1rem 15rem;
 }
 
+h4, #numAnswer, #pplInSpace{
+  text-align: center;
+}
+
 .apod-container {
     margin: 0 auto;
     margin-top: 3%;
