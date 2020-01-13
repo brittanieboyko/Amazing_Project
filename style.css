@@ -273,3 +273,9 @@ img {vertical-align: middle;}
   right: 0;
   transition: all 0.5s ease;
 }
+
+.modal-caption-text {
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+}
