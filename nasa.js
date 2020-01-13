@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
     var galleryImageContainer = $("#image-container");
+    var galleryModal = document.querySelector("#gallery-modal");
+    var span = document.getElementsByClassName("close")[0];
+
 
     function getNasaImageLibrary() {
         event.preventDefault();
@@ -22,7 +25,7 @@ $(document).ready(function(){
                         galleryImage.attr({
                             src: result.links[0].href,
                             alt: result.data.title,
-                            class: "gallery-img"
+                            class: "nasa-gallery-img"
                             });
                         galleryImageContainer.append(galleryImage);
                     })
@@ -36,5 +39,15 @@ $(document).ready(function(){
         }
     }
 
+    span.onclick = function() {
+        galleryModal.style.display = "none";
+    }
+
     $("#image-search-button").click(getNasaImageLibrary);
+
+    $(document).on('click','.nasa-gallery-img',function(){
+        var modalImg = document.querySelector(".modal-content");
+        galleryModal.style.display = "block";
+        modalImg.src = this.src;
+    });
 })
