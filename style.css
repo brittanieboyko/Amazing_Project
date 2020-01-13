@@ -14,8 +14,7 @@ body, h3, h4, button {
 li {
   text-align: center;
   list-style-type: none;
-  padding: 1rem 10rem 1rem 10rem;
-  
+  padding: 1rem 15rem 1rem 15rem;
 }
 
 .apod-container {
@@ -212,6 +211,8 @@ img {vertical-align: middle;}
   .modal-content {
     width: 100%;
   }
+
+  li{padding: 1rem;}
 
   .rocket-images {
     width: 600px;
