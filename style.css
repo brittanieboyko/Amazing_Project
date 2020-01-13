@@ -1,6 +1,9 @@
 body, h3, h4, button {
   font-family: 'Roboto Mono', monospace;
 }
+.button {
+  background-color: #063852;
+}
 .rocket-images{
     width: 900px;
     height: 600px;
