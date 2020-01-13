@@ -252,15 +252,6 @@ img {vertical-align: middle;}
   .prev, .next,.text {font-size: 11px}
 }
 
-.nasa-gallery-img {
-  height: 300px;
-  width: 300px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -316,4 +307,19 @@ img {vertical-align: middle;}
   margin: 0 auto;
   width: 75%;
   margin-top: 3%;
+}
+
+#image-container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3%;
+}
+
+.nasa-gallery-img {
+  height: 315px;
+  width: 315px;
+  margin: 1%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
