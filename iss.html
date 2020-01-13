@@ -1,57 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ISS</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous"> 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="top-bar">
-        <div class="align-center dropdown menu" data-dropdown-menu>   
-            <a href="index.html">Amazing Space Project</a>
-            
-            <a href="nasa.html">NASA</a>
-            
-            <a href="spacex.html">SpaceX</a>
-            
-            <a href="iss.html">International Space Station</a>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>ISS</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous"> 
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <nav class="hover-underline-menu">
+        <div>   
+          <a href="index.html" class="underline-from-center">Amazing Space Project</a>
+          <a href="nasa.html" class="underline-from-center">NASA</a>
+          <a href="spacex.html" class="underline-from-center">SpaceX</a>
+          <a href="iss.html" class="underline-from-center">International Space Station</a>
         </div>
-    </div>
-    <h3 class="text-center"> ISS Tracker</h3>
-    <div id="map"></div>
-    <br></br>
-    <h4> How many people are in space?</h4>
-    <div id="numAnswer"></div>
-    <br></br>
-    <h4>Who is in space?</h4>
-    <div id="pplInSpace"></div>
-    <div class="row align-center">
-        <div class="product-image-gallery">
-          <img class="pdp-product-image" id="main-product-image" src="assets/images/CK.png" alt="">
-          <br>
-          <ul class="menu product-thumbs  align-center">
-            <li> <a class="sim-thumb" data-image="assets/images/CK.png"><img class="astroImage" src="assets/images/CK.png"></a>Christina Koch</li>
-            <li> <a class="sim-thumb" data-image="assets/images/AS.png"><img class="astroImage" src="assets/images/AS.png"></a>Alexander Skvortsov</li>
-            <li> <a class="sim-thumb" data-image="assets/images/JM.png"><img class="astroImage" src="assets/images/JM.png"></a>Jessica Meir</li>
-            <li> <a class="sim-thumb" data-image="assets/images/LP.png"><img class="astroImage" src="assets/images/LP.png"></a>Luca Parmitano</li>
-            <li> <a class="sim-thumb" data-image="assets/images/OS.png"><img class="astroImage" src="assets/images/OS.png"></a>Oleg Skripochka</li>
-            <li> <a class="sim-thumb" data-image="assets/images/AM.png"><img class="astroImage" src="assets/images/AM.png"></a>Andrew Morgan</li>
-          </ul>
+      </nav>
+      <h3 class="text-center"> ISS Tracker</h3>
+      <div id="map"></div>
+      <br></br>
+      <h4> How many people are in space?</h4>
+      <div id="numAnswer"></div>
+      <br></br>
+      <h4>Who is in space?</h4>
+      <div id="pplInSpace"></div>
+      <div class="row align-center">
+          <div class="product-image-gallery">
+            <img class="pdp-product-image" id="main-product-image" src="assets/images/CK.png" alt="">
+            <br>
+            <ul class="menu product-thumbs  align-center">
+              <li> <a class="sim-thumb" data-image="assets/images/CK.png"><img class="astroImage" src="assets/images/CK.png"></a>Christina Koch</li>
+              <li> <a class="sim-thumb" data-image="assets/images/AS.png"><img class="astroImage" src="assets/images/AS.png"></a>Alexander Skvortsov</li>
+              <li> <a class="sim-thumb" data-image="assets/images/JM.png"><img class="astroImage" src="assets/images/JM.png"></a>Jessica Meir</li>
+              <li> <a class="sim-thumb" data-image="assets/images/LP.png"><img class="astroImage" src="assets/images/LP.png"></a>Luca Parmitano</li>
+              <li> <a class="sim-thumb" data-image="assets/images/OS.png"><img class="astroImage" src="assets/images/OS.png"></a>Oleg Skripochka</li>
+              <li> <a class="sim-thumb" data-image="assets/images/AM.png"><img class="astroImage" src="assets/images/AM.png"></a>Andrew Morgan</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      
-      
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbgpv4Gm-KWHdhFU-8ED12lR_yXCbksVQ"
-    async defer></script>
-    <script src="iss.js"></script>
-</body>
+        
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbgpv4Gm-KWHdhFU-8ED12lR_yXCbksVQ"
+      async defer></script>
+      <script src="iss.js"></script>
+  </body>
 </html>

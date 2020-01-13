@@ -1,77 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SpaceX</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-    <!-- Compressed CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-<body>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>SpaceX</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="hover-underline-menu">
+      <div>   
+          <a href="index.html" class="underline-from-center">Amazing Space Project</a>
+          <a href="nasa.html" class="underline-from-center">NASA</a>
+          <a href="spacex.html" class="underline-from-center">SpaceX</a>
+          <a href="iss.html" class="underline-from-center">International Space Station</a>
+      </div>
+  </nav>
 
-<div class="top-bar">
-    <div class="align-center dropdown menu" data-dropdown-menu>   
-        <a href="index.html">Amazing Space Project</a>
-        
-        <a href="nasa.html">NASA</a>
-        
-        <a href="spacex.html">SpaceX</a>
-        
-        <a href="iss.html">International Space Station</a>
-    </div>
-</div>
+  <div class="toggler-container">
+      <button class="button large" id="upcomingLaunches">Upcoming Launches</button>
+      <button class="button large" id="rockets">Rockets</button>
+      <button class="button large" id="missions">All Missions</button>
+  </div>
 
-<div class="toggler-container">
-    <button class="button large" id="upcomingLaunches">Upcoming Launches</button>
-    <button class="button large" id="rockets">Rockets</button>
-    <button class="button large" id="missions">All Missions</button>
-</div>
+  <div class="displayDiv"></div>
 
-<div class="displayDiv">
+  <!--<div class="slideshow-container">
 
-</div>
-
-<!--<div class="slideshow-container">
-
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-      <img id="image" src="" style="width:100%">
-      <div class="text"></div>
-    </div> -->
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img id="image" src="" style="width:100%">
+        <div class="text"></div>
+      </div> -->
+      
+      <!-- <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="" style="width:100%">
+        <div class="text">Caption Two</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div> 
+      
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      
+  </div>
+  -->
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
     
-    <!-- <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="" style="width:100%">
-      <div class="text">Caption Two</div>
-    </div>
-    
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="" style="width:100%">
-      <div class="text">Caption Three</div>
-    </div> 
-    
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    
-</div>
--->
-    <br>
-    
-    <div style="text-align:center">
-      <span class="dot" onclick="currentSlide(1)"></span> 
-      <span class="dot" onclick="currentSlide(2)"></span> 
-      <span class="dot" onclick="currentSlide(3)"></span> 
-    </div>
-  
-
-<!-- Compressed JavaScript -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
-<script src="spaceX.js"></script>
-<script src="moment.min.js"></script>
-</body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
+  <script src="spaceX.js"></script>
+  <script src="moment.min.js"></script>
+  </body>
+</html>
