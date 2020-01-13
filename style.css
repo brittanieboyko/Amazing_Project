@@ -14,7 +14,8 @@ body, h3, h4, button {
 li {
   text-align: center;
   list-style-type: none;
-  padding: 1rem;
+  padding: 1rem 10rem 1rem 10rem;
+  
 }
 
 .apod-container {
