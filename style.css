@@ -311,3 +311,9 @@ img {vertical-align: middle;}
     width: 100%;
   }
 }
+
+.nasa-image-search {
+  margin: 0 auto;
+  width: 75%;
+  margin-top: 3%;
+}
