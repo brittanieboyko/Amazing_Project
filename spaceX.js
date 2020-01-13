@@ -106,29 +106,26 @@ $(document).ready(function(){
 
         window.nextSlides = function (param) {
         
-        
-            console.log(currentIndex, currentIndex <= pictureURL[param-1].length);
             if (currentIndex + 1 < pictureURL[param-1].length){   
                 currentIndex++;         
                 $("#" + param ).attr("src", pictureURL[param-1][currentIndex]);
                 
-                console.log(currentIndex);
             } else {
                 currentIndex = 0;
                 $("#" + param ).attr("src", pictureURL[param-1][currentIndex]);
             }
                 
-            } 
-                
-        
+        } 
         
         window.minusSlides = function (param) {
             
-            for(var j = param-1; j < pictureURL[param-1].length; j--) {
-                
-                $("#" + param).attr("src", pictureURL[param-1][j]);
-            }
-
+            if (currentIndex > 0){ 
+                currentIndex--;           
+                $("#" + param ).attr("src", pictureURL[param-1][currentIndex]);
+            } else if (currentIndex === 0) {
+                currentIndex = pictureURL[param-1].length - 1;       
+                $("#" + param ).attr("src", pictureURL[param-1][currentIndex]);
+            } 
         }
 
         $.ajax({
