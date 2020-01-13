@@ -74,15 +74,23 @@ $(document).ready(function(){
             var whoInSpace = $("#pplInSpace")
 
             data['people'].forEach(function (d) {
-               whoInSpace.append('<li>' + d['name'] + '</li>')
-            
+                var newPerson = $("<li>");
+                newPerson.text(d['name']);
+               whoInSpace.append(newPerson);
             })
 
         });
-    }
     
+        $('.sim-thumb').on('click', function() {
+            $('#main-product-image').attr('src', $(this).data('image'));
+           
+          })
+          
+    
+    }
 
     initMap();
     peopleInSpace();
+    
 
-})
+});
