@@ -15,14 +15,12 @@ body, h3, h4, button {
 
 #map {
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 3%;
     width: 60%;
     height: 400px;
 }
 
 /* w3schools carousel */
-
-body {font-family: Verdana, sans-serif; margin:0}
 
 img {vertical-align: middle;}
 
@@ -152,10 +150,6 @@ img {vertical-align: middle;}
     height: 30%;
     width: 30%;
 }
-
-/* w3schools carousel */
-
-body {font-family: Verdana, sans-serif; margin:0}
 
 img {vertical-align: middle;}
 
@@ -323,3 +317,37 @@ img {vertical-align: middle;}
   cursor: pointer;
   transition: 0.3s;
 }
+
+.hover-underline-menu {
+  width: 100%;
+  height: 60px;
+  padding: 1%;
+  background-color: #063852;
+  margin-bottom: 3%;
+}
+
+.hover-underline-menu a {
+  color: #ffffff;
+  padding: 1.2% 1.5%;
+}
+
+.hover-underline-menu .underline-from-center {
+  position: relative;
+}
+
+.hover-underline-menu .underline-from-center::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 0.125rem);
+  border-bottom: 0.125rem solid #763626;
+  left: 50%;
+  right: 50%;
+  transition: all 0.5s ease;
+}
+
+.hover-underline-menu .underline-from-center:hover::after {
+  left: 0;
+  right: 0;
+  transition: all 0.5s ease;
+}
+
