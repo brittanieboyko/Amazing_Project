@@ -99,29 +99,34 @@ $(document).ready(function(){
             $(".displayDiv").append(container).append(infoDiv);// Append the new elements
             
         }
+        var currentIndex = 0;
 
         //function that changes the src of the image tag to the next url in the array
         
 
         window.nextSlides = function (param) {
-            //for loop over the pictureurls length
-            console.log(pictureURL[param-1]);
-            console.log(param-1);
-            
-                for(var j = param-1; j <pictureURL[param-1].length; j++) {
-                    console.log(pictureURL[param-1].length);
-                    $("#" + param ).attr("src", pictureURL[param-1][j]);
-                    
-                }
-        }
+        
+        
+            console.log(currentIndex, currentIndex <= pictureURL[param-1].length);
+            if (currentIndex + 1 < pictureURL[param-1].length){   
+                currentIndex++;         
+                $("#" + param ).attr("src", pictureURL[param-1][currentIndex]);
+                
+                console.log(currentIndex);
+            } else {
+                currentIndex = 0;
+                $("#" + param ).attr("src", pictureURL[param-1][currentIndex]);
+            }
+                
+            } 
+                
+        
         
         window.minusSlides = function (param) {
-            console.log("hey");
             
-            for(var j = param; j < pictureURL[param].length; j--) {
-                // console.log();
-                $("#" + j).attr("src", srcGet[j]);
-                return;
+            for(var j = param-1; j < pictureURL[param-1].length; j--) {
+                
+                $("#" + param).attr("src", pictureURL[param-1][j]);
             }
 
         }
@@ -144,7 +149,6 @@ $(document).ready(function(){
                 rocketHeight.push(data.height.meters);
 
                 srcGet = pictureURL[i];
-                console.log(pictureURL, pictureURL[i][1]);
                 nameGet = rocketName[i];
                 descGet = rocketDescription[i];
                 costGet = rocketCost[i];
