@@ -6,8 +6,16 @@ body, h3, h4, button {
   background-color: #063852;
 }
 .rocket-images{
-    width: 900px;
+    width: 1000px;
     height: 600px;
+    border-radius: .2rem;
+}
+
+li {
+  text-align: center;
+  list-style-type: none;
+  padding: 1rem 10rem 1rem 10rem;
+  
 }
 
 .apod-container {
@@ -203,6 +211,11 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 700px){
   .modal-content {
     width: 100%;
+  }
+
+  .rocket-images {
+    width: 600px;
+    height: 400px;
   }
 }
 

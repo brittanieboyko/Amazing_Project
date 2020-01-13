@@ -25,6 +25,7 @@ $(document).ready(function(){
     var descGet;
     var massGet;
     var heightGet;
+    var ulLaunches;
 
     
     $("#upcomingLaunches").click(function() {
@@ -37,9 +38,13 @@ $(document).ready(function(){
         })
 
         .then(function(upcomingLaunches) {
-
+            var launches = $("<div>");
+            var info =$("<div>");
             $.each(upcomingLaunches, function(i, data){
-                displayDiv.append("<li>Mission Name: " + data.mission_name + "</li>" +  "<li>Launch Date: " + moment(data.launch_date_utc).format("dddd, MMMM Do YYYY") + " </li>") 
+                
+                info.append("<li>Mission Name: " + data.mission_name +"</li>" +  "<li>Launch Date: " + moment(data.launch_date_utc).format("dddd, MMMM Do YYYY") + " </li>");
+                launches.append(info);
+                displayDiv.append(launches);
             })
         })
     })
@@ -74,8 +79,8 @@ $(document).ready(function(){
             
             var container = $("<div>").addClass("slideshow-container");
             var mySlides = $("<div>").addClass("mySlides fade");
-            var numbertext = $("<div>").addClass("numbertext").text(imageCount+1);
-            img = $("<img>").attr("id", rocketCount);
+            var numbertext = $("<div>").addClass("numbertext").text(rocketCount);
+            img = $("<img>").attr("id", rocketCount).addClass("rocket-images");
             img.attr("src", srcGet);
             var captionText = $("<div>").addClass("captionText");
 
@@ -83,8 +88,12 @@ $(document).ready(function(){
             var nameDiv = $("<div>");
             nameDiv.append(nameGet);
 
-            var infoDiv = $("<p>");
-            infoDiv.append(costGet, massGet, heightGet, descGet);
+            var costLI = $("<li>").text("Cost Per Launch: $" + costGet);
+            var massLI = $("<li>").text("Mass: " + massGet + " kg");
+            var heightLI = $("<li>").text("Height: "+ heightGet + " meters");
+            var descLI = $("<li>").text(descGet)
+            var infoDiv = $("<ul>");
+            infoDiv.append(costLI).append(massLI).append(heightLI).append(descLI);
             
             captionText.append(nameDiv);
 
