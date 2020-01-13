@@ -1,6 +1,31 @@
 $(document).ready(function(){
-
+    $(document).foundation();
     var displayDiv = $(".displayDiv");
+    var carousel = $(".carousel");
+    var imageEl = $("#image");
+    var forwardBtn = $("#forward");
+    var backwardBtn = $("#backward");
+    var imageCount = 0;
+    var rocketCount = 0;
+    var prev = $("#prev");
+    
+    //arrays
+    var pictureURL = [];
+    var rocketDescription = [];
+    var rocketCost = [];
+    var rocketMass = [];
+    var rocketHeight = [];
+    var rocketName = [];
+    var img;
+
+    //get variables
+    var srcGet;
+    var nameGet;
+    var costGet;
+    var descGet;
+    var massGet;
+    var heightGet;
+
     
     $("#upcomingLaunches").click(function() {
         $(displayDiv).empty();
@@ -33,14 +58,81 @@ $(document).ready(function(){
             console.log(missions);
 
             $.each(missions, function(i, data){
-                displayDiv.append("<li>Mission Name: " + data.mission_name + " </li>" + "<li>Description: " + data.description + " </li>"); 
+                displayDiv.append("<li>Mission Name: " + data.mission_name + " </li>" + "<li>Description: " + data.description + " </li>" + "<li><a href=\"" + data.website + "\">Website</a></li>"); 
             })
         })
     })
 
     $("#rockets").click(function() {
         $(displayDiv).empty();
+        $(carousel).removeClass("hide");
+        
         var rocketsURL = "https://api.spacexdata.com/v3/rockets";
+
+        function appendText() {
+            rocketCount++;
+            
+            var container = $("<div>").addClass("slideshow-container");
+            var mySlides = $("<div>").addClass("mySlides fade");
+            var numbertext = $("<div>").addClass("numbertext").text(imageCount+1);
+            img = $("<img>").attr("id", "image");
+            img.attr("src", srcGet);
+            var captionText = $("<div>").addClass("captionText");
+
+            //append text
+            var nameDiv = $("<div>");
+            nameDiv.append(nameGet);
+
+            var infoDiv = $("<p>");
+            infoDiv.append(costGet, massGet, heightGet, descGet);
+            
+            captionText.append(nameDiv);
+
+            //anchor tags
+            var prev = $("<a id=\"prev\" class=\"prev\">&#10094;</a>");
+            var next = $("<a id=\"next\" class=\"next\">&#10095;</a>");
+            
+            // prev.click(minusSlides());
+            // next.click(plusSlides());
+
+            mySlides.append(numbertext).append(numbertext).append(img).append(captionText);
+
+            container.append(mySlides).append(prev).append(next);
+
+            console.log(mySlides);
+            $(".displayDiv").append(container).append(infoDiv);// Append the new elements
+            
+        }
+
+        //function that changes the src of the image tag to the next url in the array
+        function minusSlides() {
+            console.log("hey");
+            if (imageCount > pictureURL[i]) {
+                imageCount--;
+                img.attr("src", pictureURL[i--]);
+            } else {
+                imageCount = pictureURL.length;
+                img.attr("src", pictureURL[Math.max(pictureURL)]);
+            }
+        }
+
+        function plusSlides () {
+            //for loop over the pictureurls length
+            console.log("hey");
+
+            
+            // if (imageCount < pictureURL[i]){
+            //     imageCount++;
+            //     i=imageCount;
+            //     img.attr("src", pictureURL[i]);
+            //     console.log("Yessir");
+            // } else {
+            //     imageCount = 0;
+            //     pictureURL[0];
+            // }
+        }
+
+        
 
         $.ajax({
             url: rocketsURL,
@@ -51,10 +143,30 @@ $(document).ready(function(){
             console.log(rockets);
             
             $.each(rockets, function(i, data){
-                displayDiv.append("<img class=\"rocket-images\" src=\"" + data.flickr_images[0] + "\">" + "<li> " + data.rocket_name + "</li>" + 
-                "<li>Mass: " + data.mass.kg + " kg </li>" + "<li>Height: " + data.height.meters + "m </li>" + "<li>Cost per launch $" + data.cost_per_launch  + "</li>"
-                + "<li>Description: " + data.description + "</li>");
+
+                pictureURL.push(data.flickr_images);
+                rocketName.push(data.rocket_name);
+                rocketDescription.push(data.description);
+                rocketCost.push(data.cost_per_launch);
+                console.log(rocketCost);
+                rocketMass.push(data.mass.kg);
+                rocketHeight.push(data.height.meters);
+
+                // $(".captionText").append(rocketName);
+                srcGet = pictureURL[i];
+                nameGet = rocketName[i];
+                descGet = rocketDescription[i];
+                costGet = rocketCost[i];
+                massGet = rocketMass[i];
+                heightGet = rocketHeight[i];
+                
+                appendText();
+
+                console.log(pictureURL, data.flickr_images[i]);
             })
+
+            
+
         })
     })
 })
