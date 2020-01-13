@@ -7,7 +7,7 @@ $(document).ready(function(){
     var backwardBtn = $("#backward");
     var imageCount = 0;
     var rocketCount = 0;
-    var prev = $("#prev");
+    
     
     //arrays
     var pictureURL = [];
@@ -75,7 +75,7 @@ $(document).ready(function(){
             var container = $("<div>").addClass("slideshow-container");
             var mySlides = $("<div>").addClass("mySlides fade");
             var numbertext = $("<div>").addClass("numbertext").text(imageCount+1);
-            img = $("<img>").attr("id", "image");
+            img = $("<img>").attr("id", rocketCount);
             img.attr("src", srcGet);
             var captionText = $("<div>").addClass("captionText");
 
@@ -89,50 +89,42 @@ $(document).ready(function(){
             captionText.append(nameDiv);
 
             //anchor tags
-            var prev = $("<a id=\"prev\" class=\"prev\">&#10094;</a>");
-            var next = $("<a id=\"next\" class=\"next\">&#10095;</a>");
+            var prev = $("<a id=\"prev\" class=\"prev\" onclick=\"minusSlides(" + rocketCount + ")\">&#10094;</a>");
+            var next = $("<a id=\"next\" class=\"next\" onclick=\"nextSlides(" + rocketCount + ")\">&#10095;</a>");
             
-            // prev.click(minusSlides());
-            // next.click(plusSlides());
-
             mySlides.append(numbertext).append(numbertext).append(img).append(captionText);
 
             container.append(mySlides).append(prev).append(next);
 
-            console.log(mySlides);
             $(".displayDiv").append(container).append(infoDiv);// Append the new elements
             
         }
 
         //function that changes the src of the image tag to the next url in the array
-        function minusSlides() {
-            console.log("hey");
-            if (imageCount > pictureURL[i]) {
-                imageCount--;
-                img.attr("src", pictureURL[i--]);
-            } else {
-                imageCount = pictureURL.length;
-                img.attr("src", pictureURL[Math.max(pictureURL)]);
-            }
-        }
-
-        function plusSlides () {
-            //for loop over the pictureurls length
-            console.log("hey");
-
-            
-            // if (imageCount < pictureURL[i]){
-            //     imageCount++;
-            //     i=imageCount;
-            //     img.attr("src", pictureURL[i]);
-            //     console.log("Yessir");
-            // } else {
-            //     imageCount = 0;
-            //     pictureURL[0];
-            // }
-        }
-
         
+
+        window.nextSlides = function (param) {
+            //for loop over the pictureurls length
+            console.log(pictureURL[param-1]);
+            console.log(param-1);
+            
+                for(var j = param-1; j <pictureURL[param-1].length; j++) {
+                    console.log(pictureURL[param-1].length);
+                    $("#" + param ).attr("src", pictureURL[param-1][j]);
+                    
+                }
+        }
+        
+        window.minusSlides = function (param) {
+            console.log("hey");
+            
+            for(var j = param; j < pictureURL[param].length; j--) {
+                // console.log();
+                $("#" + j).attr("src", srcGet[j]);
+                return;
+            }
+
+        }
 
         $.ajax({
             url: rocketsURL,
@@ -148,12 +140,11 @@ $(document).ready(function(){
                 rocketName.push(data.rocket_name);
                 rocketDescription.push(data.description);
                 rocketCost.push(data.cost_per_launch);
-                console.log(rocketCost);
                 rocketMass.push(data.mass.kg);
                 rocketHeight.push(data.height.meters);
 
-                // $(".captionText").append(rocketName);
                 srcGet = pictureURL[i];
+                console.log(pictureURL, pictureURL[i][1]);
                 nameGet = rocketName[i];
                 descGet = rocketDescription[i];
                 costGet = rocketCost[i];
@@ -162,11 +153,14 @@ $(document).ready(function(){
                 
                 appendText();
 
-                console.log(pictureURL, data.flickr_images[i]);
             })
 
             
 
         })
     })
+
+    
+
+    
 })
