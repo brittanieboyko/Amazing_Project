@@ -26,7 +26,6 @@ $(document).ready(function(){
             apodTitle.text(data.title);
             apodDate.text(data.date);
             imageDescription.text(data.explanation);
-            console.log(imageDescription.text());
     
             imageContainer.append(apodImage);
             imageContainer.append(apodTitle);

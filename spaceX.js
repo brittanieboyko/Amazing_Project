@@ -60,7 +60,6 @@ $(document).ready(function(){
         })
 
         .then(function(missions) {
-            console.log(missions);
 
             $.each(missions, function(i, data){
                 displayDiv.append("<li>Mission Name: " + data.mission_name + " </li>" + "<li>Description: " + data.description + " </li>" + "<li><a href=\"" + data.website + "\">Website</a></li>"); 
@@ -143,7 +142,6 @@ $(document).ready(function(){
         })
 
         .then(function(rockets) {
-            console.log(rockets);
             
             $.each(rockets, function(i, data){
 
